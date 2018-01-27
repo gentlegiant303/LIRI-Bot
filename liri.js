@@ -38,13 +38,13 @@ function twitter() {
     access_token_key: keys.twitterKeys.access_token_key,
     access_token_secret: keys.twitterKeys.access_token_secret
   });
-  client.get('search/tweets', {
+  client.get('statuses/user_timeline', {
     q: 'gentlegiant303',
     count: 10
   }, function(error, tweets, response) {
-    for (let i = 0; i < 20; i++) {
-      console.log(tweets.statuses[i].created_at);
-      console.log(tweets.statuses[i].text);
+    for (let i = 0; i < tweets.length; i++) {
+      console.log(tweets[i].created_at);
+      console.log(tweets[i].text);
     }
   });
 }
