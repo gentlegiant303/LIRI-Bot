@@ -42,8 +42,10 @@ function twitter() {
     q: 'gentlegiant303',
     count: 10
   }, function(error, tweets, response) {
-    console.log(tweets.statuses[0].created_at);
-    console.log(tweets.statuses[0].text);
+    for (let i = 0; i < 20; i++) {
+      console.log(tweets.statuses[i].created_at);
+      console.log(tweets.statuses[i].text);
+    }
   });
 }
 
